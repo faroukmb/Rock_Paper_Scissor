@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    text-align: center;
+    background-color: indigo;
+    margin: 100px 300px;
+    height: 450px;
+    border-radius: 7px;
+}
+.container h1{
+    color: #fff;
+    margin: 50px 25px 25px 50px;
+    padding: 20px;
+}
+
+.choices img{
+    cursor: pointer;
+}
+.result p{ 
+ text-align: left;
+ padding-left: 200px;
+ color: #fff;
+ font-size: 1.2em;
+}
