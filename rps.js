@@ -1,4 +1,7 @@
 const res=document.getElementById('res');
+const ro=document.querySelector("#rock");
+const pa=document.querySelector("#paper");
+const sc=document.querySelector("#scissor");
 function getComputerChoice(){
  let choixn=Math.floor(Math.random() * 3);
    let choix;
@@ -7,49 +10,54 @@ function getComputerChoice(){
    if (choixn==2){choix="paper";}
    return choix;
 }
-function getHumanChoice(){
- let hc1=prompt('choose rock or paper or scissor');
- let hc2=hc1.toLowerCase();
-if (hc2=="paper" || hc2=="rock" || hc2=="scissor"){
-   return hc2;
-}
-else{
-   return getHumanChoice();
-}
-}
-
-function playGame(){
    let humanscore=0;
    let computerscore=0;
+   let rn=1;
    function playRound(humanChoice,computerChoice,rn){
         if (humanChoice===computerChoice){
          humanscore++;
          computerscore++;
          
-         res.innerHTML+=(`Round ${rn}: Tie!! you both choose ${humanChoice}</br>`);
+         res.innerHTML=(`Round ${rn}: Tie!!</br> your score: ${humanscore}</br> computer score: ${computerscore}`);
          
          }
         else if((humanChoice === "paper" && computerChoice ==="rock") || (humanChoice ==="rock" && computerChoice ==="scissor") || (humanChoice==="scissor" && computerChoice==="paper")){
          humanscore++;
-         res.innerHTML+=`Round ${rn}: you won this round! you choose ${humanChoice} but he choose ${computerChoice}</br>`;
+         res.innerHTML=`Round ${rn}: you won this round! </br> your score: ${humanscore}</br> computer score: ${computerscore}`;
          
         }
         else{
          computerscore++; 
-         res.innerHTML+=`Round ${rn}: Computer won this round! you choose ${humanChoice} but he choose ${computerChoice}</br>`; 
+         res.innerHTML=`Round ${rn}: Computer won this round! </br> your score: ${humanscore}</br> computer score: ${computerscore}`; 
         }
+       }
+        
+
+      
+      function handleClick(event){
+        const humanChoice=event.target.value;
+        const computerchoice=getComputerChoice();
+        if (computerscore < 5 && humanscore < 5){
+          playRound(humanChoice,computerchoice,rn++);
+        }
+        else{
+          if (humanscore==5){
+          res.innerHTML="Congratulations! you won the game:)"
+        }
+         else {
+          res.innerHTML="Hard luck! the computer won the game:("
+      }
+        }
+        
+      }
+        
        
-      }
-      for(let i=0;i<5;i++){
-         const humanChoice=getHumanChoice();
-         const computerChoice=getComputerChoice();
-         let roundNum=i+1;
-         playRound(humanChoice,computerChoice,roundNum);
-      }
-   res.innerHTML+=(`Human Score: ${humanscore}</br>`);
-   res.innerHTML+=`Computer Score: ${computerscore}</br>`;
-  }
+       ro.addEventListener("click",(e)=>handleClick(e));
+       pa.addEventListener("click",(e)=>handleClick(e));
+       sc.addEventListener("click",(e)=>handleClick(e));
+   
+       
+   
 
-
-  playGame();
-  
+ 
+   
