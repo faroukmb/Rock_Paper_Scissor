@@ -7,7 +7,7 @@
     text-align: center;
     background-color: indigo;
     margin: 100px 300px;
-    height: 450px;
+    height: 500px;
     border-radius: 7px;
 }
 .container h1{
@@ -15,13 +15,36 @@
     margin: 50px 25px 25px 50px;
     padding: 20px;
 }
+.container p{
+    color: #fff;
+    font-size: 1.2em;
+}
+.choices{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.but{
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
 
-.choices img{
+}
+.but button{
     cursor: pointer;
+    background-color: rgb(27, 27, 219);
+    border: none;
+    margin-top: 5px ;
+    padding: 10px;
+    color: #fff;
+    border-radius: 12px;
+}
+.but button:hover{
+  background-color:rgba(27, 27, 219, 0.653); ;
 }
 .result p{ 
- text-align: left;
- padding-left: 200px;
- color: #fff;
- font-size: 1.2em;
-}
+    text-align: center;
+    color: #fff;
+    font-size: 1.2em;
+    
+   }

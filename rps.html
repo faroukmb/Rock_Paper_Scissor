@@ -9,15 +9,26 @@
 <body>
     <div class="container">
         <h1>Rock-Paper-Scissors</h1>
+        <p>Choose an option:</p>
         <div class="choices">
-            <img src="images/—Pngtree—monochrome rock clip art_5830702.png" alt="" height="100px">
-            <img src="images/—Pngtree—yellow paper cartoon illustration_4655306.png" alt="" height="100px"> 
-            <img src="images/—Pngtree—blue cartoon scissors clipart_5567912.png" alt="" height="100px">
-        </div>
+            <div class="but">
+                <img src="images/—Pngtree—monochrome rock clip art_5830702.png" alt="rock" height="100px"">
+                <button id="rock" value="rock">Rock</button>
+            </div>
+            <div class="but">
+                 <img src="images/—Pngtree—yellow paper cartoon illustration_4655306.png" alt="paper" height="100px"> 
+                <button id="paper" value="paper">Paper</button>
+            </div>
+            <div class="but">
+                <img src="images/—Pngtree—blue cartoon scissors clipart_5567912.png" alt="scissor" height="100px">
+                <button id="scissor" value="scissor">Scissor</button>
+            </div>
+         </div>
         <div class="result">
             <p id="res"></p>
         </div>
     </div>
+
     <script src="rps.js"></script>
 </body>
 </html>
